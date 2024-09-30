@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     assembler
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _parse_register, symObjAddr: 0x0, symBinAddr: 0x1000038F4, symSize: 0x28 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _parse_register, symObjAddr: 0x0, symBinAddr: 0x1000038F4, symSize: 0x28 }
+  - { offsetInCU: 0x69, offset: 0x69, size: 0x8, addend: 0x0, symName: _assemble_add, symObjAddr: 0x28, symBinAddr: 0x10000391C, symSize: 0x70 }
+  - { offsetInCU: 0xE5, offset: 0xE5, size: 0x8, addend: 0x0, symName: _assemble_sub, symObjAddr: 0x98, symBinAddr: 0x10000398C, symSize: 0x70 }
+  - { offsetInCU: 0x161, offset: 0x161, size: 0x8, addend: 0x0, symName: _assemble_lw, symObjAddr: 0x108, symBinAddr: 0x1000039FC, symSize: 0x6C }
+  - { offsetInCU: 0x1DD, offset: 0x1DD, size: 0x8, addend: 0x0, symName: _assemble_sw, symObjAddr: 0x174, symBinAddr: 0x100003A68, symSize: 0x70 }
+  - { offsetInCU: 0x259, offset: 0x259, size: 0x8, addend: 0x0, symName: _assemble_beq, symObjAddr: 0x1E4, symBinAddr: 0x100003AD8, symSize: 0x70 }
+  - { offsetInCU: 0x2D5, offset: 0x2D5, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x254, symBinAddr: 0x100003B48, symSize: 0x31C }
+...
