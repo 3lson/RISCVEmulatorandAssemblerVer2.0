@@ -169,9 +169,7 @@ int main() {
         }
         // S-type instructions
         else if (strcmp(op, "sb") == 0 || strcmp(op, "sh") == 0 || strcmp(op, "sw") == 0) {
-            imm = atoi(rs2);  // The offset is the last operand
-            // rs1 stays as rs1 (base address register)
-            // rd is actually rs2 (source register)
+            imm = atoi(rs2); 
             int funct3 = (op[1] == 'b') ? FUNCT3_SB : (op[1] == 'h') ? FUNCT3_SH : FUNCT3_SW;
             instructions[instruction_count++] = generate_s_type(OPCODE_STORE, funct3, reg_to_num(rs1), reg_to_num(rd), imm);
         }

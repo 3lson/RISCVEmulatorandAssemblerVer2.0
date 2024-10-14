@@ -13,21 +13,21 @@ int vfs_open(const char* filename, int flags) {
         if (strcmp(vfs.files[i].name, filename) == 0) {
             if (!vfs.files[i].is_open) {
                 vfs.files[i].is_open = true;
-                return i;  // Return file descriptor
+                return i; 
             }
-            return -1;  // File already open
+            return -1; 
         }
     }
     
     if (vfs.file_count < MAX_FILES) {
         strncpy(vfs.files[vfs.file_count].name, filename, MAX_FILENAME - 1);
-        vfs.files[vfs.file_count].name[MAX_FILENAME - 1] = '\0';  // Ensure null-termination
+        vfs.files[vfs.file_count].name[MAX_FILENAME - 1] = '\0'; 
         vfs.files[vfs.file_count].size = 0;
         vfs.files[vfs.file_count].is_open = true;
         return vfs.file_count++;
     }
     
-    return -1;  // No more file slots available
+    return -1;  
 }
 
 int vfs_close(int fd) {

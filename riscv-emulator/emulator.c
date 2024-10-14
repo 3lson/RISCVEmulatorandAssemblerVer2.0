@@ -174,11 +174,9 @@ void execute(CPU *cpu, uint32_t instruction) {
     print_instruction(instruction);
 
     switch (opcode) {
-        // ... [All existing cases remain the same] ...
 
         case OPCODE_SYSTEM:
             if (instruction == 0x00000073) {
-                // ECALL
                 uint32_t syscall_number = cpu->registers[17];  // a7 in RISC-V
                 switch(syscall_number) {
                     case 56:  // openat in Linux
@@ -198,7 +196,6 @@ void execute(CPU *cpu, uint32_t instruction) {
                         break;
                 }
             } else if (instruction == 0x00100073) {
-                // EBREAK
                 printf("EBREAK instruction executed. Stopping emulation.\n");
                 exit(0);
             }
@@ -233,7 +230,7 @@ int main() {
     // Execute instructions
     while (cpu.pc < MEM_SIZE) {
         uint32_t instruction = fetch(&cpu);
-        if (instruction == 0) break;  // Stop if we reach a null instruction
+        if (instruction == 0) break;  
         execute(&cpu, instruction);
     }
 
